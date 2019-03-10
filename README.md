@@ -1,6 +1,5 @@
 # Project: Tic Tac Toe
 
-## >Build a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
+>Lets Build a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
 
-
-This is my version of the gaem Tic Tac Toe played through the command line. 
+>My assigment is to utilize OOP principles to design the simple game 'Tic Tac Toe' to be played in the command line between two players.
