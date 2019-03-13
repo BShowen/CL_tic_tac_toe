@@ -1,0 +1,24 @@
+GameBoard - Im a class - I render new boards
+            • INPUT 
+                • Tell me a players desired position
+            OUTPUT
+                • I can render a dafualt game board
+                • I can render a game board with player choices on it
+                • I can check for winners 
+.
+
+Player - Im a class - I store player state
+        INPUT
+            • I know players character
+            • I know players name
+            • I know players positions on the board
+        OUTPUT
+            • I will tell you my name
+            • I wll tell you my positions
+            • I will tell you my character
+.
+
+Game - Im a script - I play a single round of tic tac toe
+        • I start by getting and setting player information
+        • I enter a loop and play the game until a winner or tie is found
+.
