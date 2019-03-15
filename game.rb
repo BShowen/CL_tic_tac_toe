@@ -5,26 +5,29 @@ puts "Lets play.\nWho wnats to be X?"
 x = Player.new gets.chomp , 'X'
 puts "Who will be O?"
 o = Player.new gets.chomp , "O"
+puts `clear`
 board = GameBoard.new
 
 keep_playing = true
 
 while keep_playing
 
-    puts "#{x.name} choose a position on the board."
+    puts "#{x.name}, choose a position on the board."
     x.position = gets.chomp.to_i
+    puts `clear`
     board.render_board x.character , x.position
     if board.winner? x.all_positions
         puts "WOOT WOOT #{x.name} won!"
         break
     end
 
-    puts "#{o.name} choose a position on the board."
+    puts "#{o.name}, choose a position on the board."
     o.position = gets.chomp.to_i
+    puts `clear`
     board.render_board o.character , o.position
     if board.winner? o.all_positions
         puts "WOOT WOOT #{o.name} won!"
         break
     end
-
+    
 end
