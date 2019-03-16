@@ -13,13 +13,22 @@ class Player
         store_position
     end
 
-    def turn 
+    def turn remaining_positions
         puts "#{self.name}, choose a position on the board."
         begin
             reply = gets.chomp.match(/^\d/)[0]
+            unless remaining_positions.include? reply.to_i
+                raise
+            end
         rescue
-            puts "try again..."
-            retry
+            if reply
+                puts "That spot is already taken. Try again."
+                reply = nil
+                retry
+            else
+                puts "Thats not a number. Try again."
+                retry
+            end
         else
             self.position = reply.to_i
             puts `clear`
