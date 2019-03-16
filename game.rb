@@ -9,14 +9,14 @@ puts `clear`
 board = GameBoard.new
 
 loop do
-    player_X.turn
+    player_X.turn board.positions
     board.render_board player_X.character , player_X.position
     if board.winner? player_X.all_positions
         puts "WOOT WOOT #{player_X.name} won!"
         break
     end
 
-    player_O.turn
+    player_O.turn board.positions
     board.render_board player_O.character , player_O.position
     if board.winner? player_O.all_positions
         puts "WOOT WOOT #{player_O.name} won!"
