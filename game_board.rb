@@ -1,5 +1,4 @@
 class GameBoard
-    attr_accessor :positions
 
     def initialize 
         @positions = [0,1,2,3,4,5,6,7,8] 
@@ -8,9 +7,6 @@ class GameBoard
 
     def render_board character=nil , position=nil
         unless position == nil || character == nil
-            # if (@positions.include? position) == false 
-                # puts "that spot is already taken, try again."
-            # end 
             @positions.map! do |item|
                 item == position ? character : item 
             end
@@ -24,6 +20,12 @@ class GameBoard
             sub_array.all? do |sub_array_item|
                 player_positions.include? sub_array_item
             end
+        end
+    end
+
+    def positions 
+        @positions.select do |item|
+            item.is_a? Integer
         end
     end
 end
