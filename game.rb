@@ -9,16 +9,9 @@ puts `clear`
 board = GameBoard.new
 
 turn = Proc.new do | player |
-    player.turn board.positions
+    player.turn board.positions_left
     board.render_board player.character , player.position
-    if board.winner_or_tie? player.all_positions , 'winner?'
-        puts "WOOT WOOT #{player.name} won!"
-        return 
-    end
-    if board.winner_or_tie? 'tie?'
-        puts "It\'s a tie!"
-        return
-    end
+    return if board.winner_or_tie? player.all_positions , player.name
 end
 
 def next_turn player , &turn 
