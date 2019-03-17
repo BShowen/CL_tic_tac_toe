@@ -13,11 +13,11 @@ class Player
         store_position
     end
 
-    def turn remaining_positions
+    def turn remaining_open_positions
         puts "#{self.name}, choose a position on the board."
         begin
             reply = gets.chomp.match(/^\d/)[0]
-            unless remaining_positions.include? reply.to_i
+            unless remaining_open_positions.include? reply.to_i
                 raise
             end
         rescue
