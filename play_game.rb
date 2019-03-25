@@ -1,8 +1,11 @@
 require "./player.rb"
 require "./game_board.rb"
+require "./instructions.rb"
+
+Instructions::intro
 
 def intro
-    puts "Lets play.\nWho wnats to be X?"
+    puts "\nLets play.\nWho wnats to be X?"
     $player_X = Player.new gets.chomp , 'X'
     puts "Who will be O?"
     $player_O = Player.new gets.chomp , "O"
@@ -30,12 +33,13 @@ end
 
 def play_again
     sleep 1
-    puts "Want to play again? Y/N"
+    puts "\nWant to play again? Y/N"
     reply = gets.chomp.upcase
     if reply == "Y"
         play_one_round
     else
-        puts "Thanks for playing!"
+        puts `clear`
+        puts "\nThanks for playing!"
         exit 
     end
 end

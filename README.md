@@ -1,5 +1,8 @@
 # Project: Tic Tac Toe
 
-Build a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
+###Build a Tic-Tac-Toe game on the command line where two human players can play against each other. Utilize OOP principles to design the game. 
 
-Utilize OOP principles to design the game 'Tic Tac Toe' to be played in the command line between two players.
+## To play the game please follow the instructions below. 
+1. First, clone or download a copy of this repo onto your machine. 
+2. Open your command-line and cd into the directory where you have downloaded these files.
+3. Play the game by typing $`ruby play_game.rb` 

@@ -11,7 +11,7 @@ class GameBoard
                 item == position ? character : item 
             end
         end
-        puts "\n #{@positions[0] } | #{@positions[1]} | #{@positions[2]} \n---|---|---\n #{@positions[3]} | #{@positions[4]} | #{@positions[5]} \n---|---|---\n #{@positions[6]} | #{@positions[7]} | #{@positions[8]}"
+        puts "\n\t #{@positions[0] } | #{@positions[1]} | #{@positions[2]} \n\t---|---|---\n\t #{@positions[3]} | #{@positions[4]} | #{@positions[5]} \n\t---|---|---\n\t #{@positions[6]} | #{@positions[7]} | #{@positions[8]}"
     end
 
     def winner_or_tie? player_positions , name
@@ -25,10 +25,10 @@ class GameBoard
         tie = positions_left.empty? 
     
         if winner
-            puts "#{name} won!"
+            puts "\n#{name} won!"
             true
         elsif tie
-            puts "Its a tie!"
+            puts "\nIts a tie!"
             true
         else
             false
