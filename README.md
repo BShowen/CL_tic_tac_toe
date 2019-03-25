@@ -1,6 +1,6 @@
 # Project: Tic Tac Toe
 
-### Build a Tic-Tac-Toe game on the command line where two human players can play against each other. Utilize OOP principles to design the game. 
+Build a Tic-Tac-Toe game on the command line where two human players can play against each other. Utilize OOP principles to design the game. 
 
 ## To play the game please follow the instructions below. 
 1. First, clone or download a copy of this repo onto your machine. 
