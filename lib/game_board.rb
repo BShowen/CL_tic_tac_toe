@@ -2,7 +2,7 @@ class GameBoard
 
     def initialize 
         @positions = [0,1,2,3,4,5,6,7,8] 
-        # display_board
+        @winning_solutions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     end
 
     def display_board
@@ -15,25 +15,32 @@ class GameBoard
         end
     end
 
-    def winner_or_tie?(player_positions , name)
-        solutions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
-        winner = solutions.any? do |sub_array|
-            sub_array.all? do |sub_array_item|
-                player_positions.include?(sub_array_item)
-            end
-        end
-    
-        tie = remaining_positions.empty? 
-    
-        if winner
+    def winner_or_tie?(player_positions, name)
+        if winner?(player_positions)
             puts "\n#{name} won!"
             true
-        elsif tie
+        elsif tie?
             puts "\nIts a tie!"
             true
         else
             false
         end
+    end
+    
+    def winner?(player_positions)
+        @winning_solutions.any? do |single_solution|
+            player_positions_include_a_winning_solution?(player_positions, single_solution)
+        end
+    end
+    
+    def player_positions_include_a_winning_solution?(player_positions, solution)
+        solution.all? do |square|
+            player_positions.include?(square)
+        end
+    end
+    
+    def tie?
+        remaining_positions.empty? 
     end
 
     def remaining_positions 
