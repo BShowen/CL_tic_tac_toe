@@ -14,7 +14,7 @@ def set_players
     $board.display_board
 end
 
-$turn = Proc.new do | player |
+$turn_logic = Proc.new do | player |
     player.turn($board.remaining_positions)
     $board.populate_board_pieces(player.character, player.position)
     $board.display_board
@@ -28,7 +28,7 @@ end
 def play_one_round
     set_players 
     loop do
-        start_turn($player_X, &$turn)
+        start_turn($player_X, &$turn_logic)
         start_turn($player_O, &$turn)
     end
 end
